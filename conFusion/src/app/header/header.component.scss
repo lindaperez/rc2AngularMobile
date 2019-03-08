@@ -10,7 +10,15 @@ $background-pale: #e9d08c;
 
 .jumbotron {
   @include zero-margin(70px,30px);
-  background: $background-light ;
+  background: $background-pale ;
   color: black;
   min-height: 150px;
+}
+
+.active{
+  background: $background-pale;
+
+}
+.mat-toolbar {
+  background: cornsilk;
 }
