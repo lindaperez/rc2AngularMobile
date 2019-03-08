@@ -5,17 +5,6 @@
 @import '../node_modules/font-awesome/scss/font-awesome.scss';
 
 
-body {
-  padding : 0;
-  margin : 0;
-  font-family: AppleGothic;
-
-
-}
-.container {
-  margin: 20px;
-  display:flex;
-}
 
 
 $lt-gray: #ddd;
@@ -51,4 +40,16 @@ $divider-color:        #BDBDBD;
 
 .flex-spacer {
   flex: 1 1 auto;
+}
+
+body {
+  padding : 0;
+  margin : 0;
+  font-family: AppleGothic;
+
+
+}
+.container {
+  margin: 20px;
+  display:flex;
 }
