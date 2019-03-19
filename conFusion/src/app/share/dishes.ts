@@ -6,12 +6,11 @@ export const DISHES : Dish[] =   [
   {
     id: '0',
     name: 'Uthappizza',
-    image: '/assets/images/uthappizza.png',
+    image: '/assets/images/arepa.jpg',
     category: 'mains',
     featured: true,
     label: 'Hot',
     price: '4.99',
-    // tslint:disable-next-line:max-line-length
     description: 'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
     comments: [
       {
@@ -25,7 +24,7 @@ export const DISHES : Dish[] =   [
   {
     id: '1',
     name: 'Zucchipakoda',
-    image: '/assets/images/zucchipakoda.png',
+    image: '/assets/images/arepaSola.jpg',
     category: 'appetizer',
     featured: false,
     label: '',
@@ -56,7 +55,7 @@ export const DISHES : Dish[] =   [
   {
     id: '2',
     name: 'Vadonut',
-    image: '/assets/images/vadonut.png',
+    image: '/assets/images/arepaSola.jpg',
     category: 'appetizer',
     featured: false,
     label: 'New',
@@ -81,7 +80,7 @@ export const DISHES : Dish[] =   [
   {
     id: '3',
     name: 'ElaiCheese Cake',
-    image: '/assets/images/elaicheesecake.png',
+    image: '/assets/images/arepaSola.jpg',
     category: 'dessert',
     featured: false,
     label: '',
