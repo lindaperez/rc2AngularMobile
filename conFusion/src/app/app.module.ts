@@ -11,6 +11,7 @@ import { MatDialogModule} from '@angular/material/dialog';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatSelectModule} from '@angular/material/select';
 import { MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatInputModule} from '@angular/material/input';
@@ -23,8 +24,6 @@ import { AppComponent } from './app.component';
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
-
-
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
@@ -59,19 +58,21 @@ import { LoginComponent } from './login/login.component';
 
     FormsModule,
     ReactiveFormsModule,
+
     MatToolbarModule,
     MatListModule,
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
-    AppRoutingModule,
     MatDialogModule,
+    AppRoutingModule,
 
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
     MatSelectModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatProgressSpinnerModule,
 
   ],
   entryComponents: [
