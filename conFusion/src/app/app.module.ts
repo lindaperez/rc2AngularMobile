@@ -18,6 +18,8 @@ import { MatCheckboxModule} from '@angular/material/checkbox';
 import { MatInputModule} from '@angular/material/input';
 import { FormsModule} from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 
@@ -38,6 +40,7 @@ import { PromotionService} from './services/promotion.service';
 import { LeaderService} from  './services/leader.service';
 import { LoginComponent } from './login/login.component';
 
+import { baseURL } from './share/baseurl';
 
 @NgModule({
   declarations: [
@@ -75,11 +78,17 @@ import { LoginComponent } from './login/login.component';
     MatSlideToggleModule,
     MatProgressSpinnerModule,
     MatSliderModule,
+    HttpClientModule,
+
 
   ],
   entryComponents: [
     LoginComponent],
-  providers: [DishService, PromotionService, LeaderService],
+  providers: [
+    DishService,
+    PromotionService,
+    LeaderService,
+    {provide: 'BaseURL', useValue: baseURL}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
