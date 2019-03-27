@@ -3,7 +3,7 @@
     {
       "id": "0",
       "name": "Uthappizza",
-      "image": "images/uthappizza.png",
+      "image": "images/arepa.jpg",
       "category": "mains",
       "featured": true,
       "label": "Hot",
@@ -63,7 +63,7 @@
     {
       "id": "1",
       "name": "Zucchipakoda",
-      "image": "images/zucchipakoda.png",
+      "image": "images/arepaSola.jpg",
       "category": "appetizer",
       "featured": false,
       "label": "",
@@ -111,7 +111,7 @@
     {
       "id": "2",
       "name": "Vadonut",
-      "image": "images/vadonut.png",
+      "image": "images/arepaC.jpg",
       "category": "appetizer",
       "featured": false,
       "label": "New",
@@ -153,7 +153,7 @@
     {
       "id": "3",
       "name": "ElaiCheese Cake",
-      "image": "images/elaicheesecake.png",
+      "image": "images/arepaws.jpg",
       "category": "dessert",
       "featured": false,
       "label": "",

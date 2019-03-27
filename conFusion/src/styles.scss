@@ -11,7 +11,7 @@ $lt-gray: #ddd;
 $background-dark: #A8824E;
 $background-light: #cdbe76;
 $background-pale: #e9d08c;
-$primary-color-dark: #2f4ba8;
+$primary-color-dark: #a8824e;
 $primary-color: #3559b7;
 $primary-color-light:  #D1C4E9;
 $primary-color-text:   #FFFFFF;
@@ -52,4 +52,10 @@ body {
 .container {
   margin: 20px;
   display:flex;
+}
+.highlight{
+   background-color: $background-pale;
+   border: 1px solid $primary-color-dark;
+   z-index: 1;
+   transform: scale(1.01);
 }
