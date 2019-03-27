@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <div fxFlex>
+  <div fxFlex  [@expand]="expand">
     <div fxLayout="column" fxLayout.gt-sm="row">
       <div fxFlex="70">
         <h2>Our History</h2>
@@ -54,7 +54,7 @@
   </div>
 
 
-  <div fxFlex>
+  <div fxFlex [@expand]="expand">
     <h2>Corporate Leadership</h2>
     <mat-grid-list cols="1" rowHeight="200px">
       <mat-grid-tile *ngFor="let leader of leaders">
