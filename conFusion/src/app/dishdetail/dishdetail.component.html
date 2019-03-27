@@ -6,7 +6,7 @@
      fxLayoutGap="10px"
      fxLayoutGap.xs="0">
 
-  <div fxFlex="40" *ngIf="dish">
+  <div fxFlex="40" *ngIf="dish || errMess" [@visibility]="visibility">
     <mat-card >
       <mat-card-header>
         <mat-card-title>
@@ -35,7 +35,9 @@
   <div fxFlex [hidden]="dish || errMess">
     <mat-spinner></mat-spinner><h4>Loading...Please Wait</h4>
   </div>
-  <div fxFlex="40" *ngIf="dish || errMess">
+
+
+  <div fxFlex="40" *ngIf="dish || errMess" >
     <mat-card >
 
       <h3>Comments </h3>
@@ -95,10 +97,12 @@
     </form>
     </mat-card>
   </div>
+
   <div fxFlex *ngIf="errMess">
     <h2>Error</h2>
     <h4>{{errMess}}</h4>
   </div>
+
 </div>
 
 
