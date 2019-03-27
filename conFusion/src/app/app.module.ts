@@ -19,7 +19,7 @@ import { MatInputModule} from '@angular/material/input';
 import { FormsModule} from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 
 import { AppComponent } from './app.component';
 
@@ -80,7 +80,6 @@ import { baseURL } from './share/baseurl';
     MatSliderModule,
     HttpClientModule,
 
-
   ],
   entryComponents: [
     LoginComponent],
@@ -88,7 +87,9 @@ import { baseURL } from './share/baseurl';
     DishService,
     PromotionService,
     LeaderService,
-    {provide: 'BaseURL', useValue: baseURL}],
+    {provide: 'BaseURL', useValue: baseURL},
+  ProcessHTTPMsgService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

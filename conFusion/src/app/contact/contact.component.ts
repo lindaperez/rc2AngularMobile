@@ -14,7 +14,7 @@ export class ContactComponent implements OnInit {
   feedback: Feedback;
   contactType=ContactType;
   @ViewChild('fform') feedbackFormDirective;
-
+  errMess: string;
 
 
   formErrors = {
@@ -67,7 +67,8 @@ export class ContactComponent implements OnInit {
     });
 
     this.feedbackForm.valueChanges
-      .subscribe(data => this.onValueChanged(data));
+      .subscribe(data => this.onValueChanged(data),
+        errmess => this.errMess = errmess);
     this.onValueChanged(); //(re)set form validation messages
   }
 
