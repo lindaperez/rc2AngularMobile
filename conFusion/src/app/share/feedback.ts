@@ -8,7 +8,7 @@ export class Feedback{
   telnum: number;
   email: string;
   agree: boolean;
-  contacttyoe: string;
+  contacttype: string;
   message: string;
 
 }

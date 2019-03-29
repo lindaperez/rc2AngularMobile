@@ -1,27 +1,41 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Feedback,ContactType} from '../share/feedback';
+import { FeedbackService } from '../services/feedback.service';
+import { dissapear,  change } from '../animations/app.animation';
+import { timeout,delay } from 'rxjs/operators';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
+  animations: [ dissapear(), change() ]
 })
 export class ContactComponent implements OnInit {
 
 
+
   feedbackForm: FormGroup;
   feedback: Feedback;
+  feedbackCopy: Feedback;
   contactType=ContactType;
   @ViewChild('fform') feedbackFormDirective;
   errMess: string;
+  returned: string;
+  dissapear = 'hidden';
+  change: string;
+
+
+
 
 
   formErrors = {
     'firstname':'',
     'lastname':'',
     'tenum':'',
-    'email':''
+    'email':'',
+    'message':''
 
   };
   validationMessages = {
@@ -43,11 +57,18 @@ export class ContactComponent implements OnInit {
       'required': 'Email is required.',
       'email': 'Email not in valid format'
 
+    },
+    'message': {
+      'required': 'Message is required.',
+
     }
 
 };
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+              private feedbackService: FeedbackService,
+              @Inject('BaseURL') private BaseURL) {
+
       this.createForm();
   }
 
@@ -94,8 +115,39 @@ export class ContactComponent implements OnInit {
 
 
   onSubmit(){
+    this.returned = 'waiting';
+    this.change = 'hidden';
+    this.dissapear = 'hidden';
+
+    console.log(this.returned);
     this.feedback = this.feedbackForm.value;
+
     console.log(this.feedback);
+
+    if(this.feedback){
+      this.feedbackService.submitFeedback(this.feedback)
+        .subscribe(feedback => {
+            this.feedback = feedback;
+            this.feedbackCopy = feedback;
+            this.returned = 'done';
+            this.dissapear = 'shown';
+            console.log(this.returned);
+            setTimeout(()=>{
+              this.dissapear = 'hidden';
+              this.returned = 'initial';
+              this.change = 'shown';
+              console.log(this.returned);
+            }, 5000);
+
+          },
+          errmess => { this.feedback = null;
+                     this.feedbackCopy=null;
+                     this.errMess = <any>errmess; });
+
+
+    }
+
+    console.log(this.returned);
     this.feedbackFormDirective.resetForm();
     this.feedbackForm.reset({
       firstname: '',

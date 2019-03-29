@@ -10,7 +10,7 @@ return trigger('visibility', [
     transform: 'scale(0.9)',
     opacity: 0
   })),
-  transition('hidden => shown', animate('0.5s ease-in-out'))
+  transition('hidden => shown', animate('5s ease-in-out'))
   ])
 };
 
@@ -34,5 +34,36 @@ export function expand() {
       style({ transform: 'translateY(-50%)', opacity:0 }),
       animate('200ms ease-in', style({ opacity: 1, transform: 'translateX(0)' }))
     ])
+  ]);
+}
+
+export function change() {
+  return trigger('change', [
+    state('shown', style({ opacity: 1, transform: 'translateY(0)' })),
+    state('hidden', style({ opacity: 0, transform: 'translateY(0)' })),
+    transition(':enter', [
+      style({ transform: 'translateY(-50%)', opacity:0 }),
+      animate('200ms ease-in', style({ opacity: 1, transform: 'translateY(0)' }))
+    ]),
+    transition('hidden => shown', [
+      style({ transform: 'translateY(-50%)', opacity:0 }),
+      animate('200ms ease-in', style({ opacity: 1, transform: 'translateY(0)' }))
+    ])
+  ]);
+}
+
+export function dissapear() {
+  return trigger('dissapear', [
+    state('shown', style({ opacity: 1, transform: 'scale(1.0)' })),
+    state('hidden', style({ opacity: 0, transform: 'scale(1.0)' })),
+    transition(':enter', [
+      style({ transform: 'translateY(-50%)', opacity:0 }),
+      animate('200ms ease-in', style({ opacity: 1, transform: 'translateX(0)' }))
+    ]),
+    transition('hidden => shown', [
+      style({ transform: 'translateY(-50%)', opacity:0 }),
+      animate('200ms ease-in', style({ opacity: 1, transform: 'translateX(0)' }))
+    ])
+
   ]);
 }
